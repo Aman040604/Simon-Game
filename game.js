@@ -66,9 +66,10 @@ function animatePress(currentColor) {
 }
 
 function playSound(name) {
-  var audio = new Audio(name + ".mp3");  // ✅ Correct path for your structure
-  audio.play();
+  var audio = new Audio(name + ".mp3");
+  audio.play().catch(err => console.log("Audio play blocked:", err));
 }
+
 
 function startOver() {
   level = 0;
